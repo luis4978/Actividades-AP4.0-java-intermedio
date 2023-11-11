@@ -13,16 +13,19 @@ public class CancionState {//Contexto
     private int disLikes;
     private int tiempoSinReproducir;
 
+    public CancionState(Cancion cancion){
+        this.cancion = cancion;
+        this.reproducciones = 0;
+        this.likes = 0;
+        this.disLikes = 0;
+        this.tiempoSinReproducir = 0;
+        cancion.setPopularidad(new Normal());
+    }
+
     public void setPopularidad (Popularidad popularidad){
         this.cancion.setPopularidad(popularidad);
     }
-    
     public void medirPopularidad(){
-        if(reproducciones > 1000 & disLikes < 5000){
-            cancion.setPopularidad(new Auge());
-        }else{
-            cancion.setPopularidad(new Normal());
-        }
-        
+        this.cancion.getPopularidad().medirPopularidad(this);
     }
 }

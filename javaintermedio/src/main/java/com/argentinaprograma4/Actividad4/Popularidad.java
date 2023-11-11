@@ -5,7 +5,6 @@ package com.argentinaprograma4.Actividad4;
  */
 public interface Popularidad {
 
-    public static Cancion cancion= null;
-
-    String mostrarPopularidad();  
+    void medirPopularidad(CancionState cancionEnReproduccion);
+    String mostrarPopularidad(Cancion cancion);
 } 
