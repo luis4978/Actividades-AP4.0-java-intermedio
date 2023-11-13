@@ -8,7 +8,8 @@ public class Tendencia implements Popularidad{
 
     @Override
     public String mostrarPopularidad(Cancion cancion) {
-        return "(FIRE)"+Icono.FIRE.texto()
+        return "(FIRE) "
+        +Icono.FIRE.texto()+" "
         +cancion.getTitulo()+" - "
         +cancion.getArtista()
         +" ("+cancion.getAlbum()

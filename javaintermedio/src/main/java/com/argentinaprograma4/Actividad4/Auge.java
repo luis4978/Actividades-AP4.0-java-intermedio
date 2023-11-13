@@ -8,7 +8,8 @@ public class Auge implements Popularidad{
     
     @Override
     public String mostrarPopularidad(Cancion cancion){
-        return "(ROCKET)"+Icono.ROCKET.texto()
+        return "(ROCKET) "
+        +Icono.ROCKET.texto()+" "
         +cancion.getArtista()+" - "
         +cancion.getTitulo()
         +" ("+cancion.getAlbum()

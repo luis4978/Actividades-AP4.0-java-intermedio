@@ -38,6 +38,7 @@ public class App {
         } else{
             System.out.println("No se puede inscribir ");
         }
+        sc.close();;
 
         /* 
         for (Alumno a : inscripcion.getListaAlum().values()) {

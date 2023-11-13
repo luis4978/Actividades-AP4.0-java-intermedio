@@ -8,7 +8,8 @@ public class Normal implements Popularidad {
 
     @Override
     public String mostrarPopularidad(Cancion cancion) {
-        return "(MUSICAL NOTE) "+Icono.MUSICAL_NOTE.texto()
+        return "(MUSICAL NOTE) "
+        +Icono.MUSICAL_NOTE.texto()+" "
         +cancion.getArtista()+" - "
         +cancion.getAlbum()+" - "
         +cancion.getTitulo();
