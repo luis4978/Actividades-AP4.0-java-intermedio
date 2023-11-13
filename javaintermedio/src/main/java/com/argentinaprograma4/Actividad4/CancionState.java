@@ -8,6 +8,7 @@ import lombok.Setter;
 
 public class CancionState {//Contexto
     private Cancion cancion;
+    private Popularidad popularidad;
     private int reproducciones;
     private int likes;
     private int disLikes;
@@ -19,13 +20,10 @@ public class CancionState {//Contexto
         this.likes = 0;
         this.disLikes = 0;
         this.tiempoSinReproducir = 0;
-        cancion.setPopularidad(new Normal());
-    }
-
-    public void setPopularidad (Popularidad popularidad){
-        this.cancion.setPopularidad(popularidad);
+        this.popularidad = new Normal();
     }
     public void medirPopularidad(){
-        this.cancion.getPopularidad().medirPopularidad(this);
+        this.popularidad.medirPopularidad(this);
+        System.out.println(this.popularidad.mostrarPopularidad(this.cancion));
     }
 }

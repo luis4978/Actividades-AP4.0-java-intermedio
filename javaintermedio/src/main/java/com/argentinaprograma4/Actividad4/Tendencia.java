@@ -17,15 +17,15 @@ public class Tendencia implements Popularidad{
     }
 
     @Override
-    public void medirPopularidad(CancionState cancionEnReproduccion) {
-        if(esNormal(cancionEnReproduccion)){
-            cancionEnReproduccion.getCancion().setPopularidad(new Normal());
+    public void medirPopularidad(CancionState enReproduccion) {
+        if(esNormal(enReproduccion)){
+            enReproduccion.setPopularidad(new Normal());
         }
     }
 
-    private boolean esNormal(CancionState cancionEnReproduccion){
-        Popularidad p = cancionEnReproduccion.getCancion().getPopularidad();
-        int horasSinReproducir = cancionEnReproduccion.getTiempoSinReproducir();
+    private boolean esNormal(CancionState enReproduccion){
+        Popularidad p = enReproduccion.getPopularidad();
+        int horasSinReproducir = enReproduccion.getTiempoSinReproducir();
         if(p instanceof Tendencia & horasSinReproducir >= 24){
             return true;
         }else{

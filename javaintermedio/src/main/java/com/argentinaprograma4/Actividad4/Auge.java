@@ -17,20 +17,20 @@ public class Auge implements Popularidad{
     }
 
     @Override
-    public void medirPopularidad(CancionState cancionEnReproduccion) {
-        if(esTendencia(cancionEnReproduccion)){
-            cancionEnReproduccion.getCancion().setPopularidad(new Tendencia());
+    public void medirPopularidad(CancionState enReproduccion) {
+        if(esTendencia(enReproduccion)){
+            enReproduccion.setPopularidad(new Tendencia());
         }else{
-            if (esNormal(cancionEnReproduccion)) {
-                cancionEnReproduccion.getCancion().setPopularidad(new Normal());
+            if (esNormal(enReproduccion)) {
+                enReproduccion.setPopularidad(new Normal());
             }
         }
     }
 
-    private boolean esTendencia(CancionState cancionEnReproduccion){
-        Popularidad p = cancionEnReproduccion.getCancion().getPopularidad();
-        int reproducciones = cancionEnReproduccion.getReproducciones();
-        int likes = cancionEnReproduccion.getLikes();
+    private boolean esTendencia(CancionState enReproduccion){
+        Popularidad p = enReproduccion.getPopularidad();
+        int reproducciones = enReproduccion.getReproducciones();
+        int likes = enReproduccion.getLikes();
         
         if(p instanceof Auge & reproducciones > 50000 & likes > 20000){
             return true;
@@ -38,9 +38,9 @@ public class Auge implements Popularidad{
             return false;
         } 
     }
-    private boolean esNormal(CancionState cancionEnReproduccion){
-        Popularidad p = cancionEnReproduccion.getCancion().getPopularidad();
-            int disLikes = cancionEnReproduccion.getDisLikes();
+    private boolean esNormal(CancionState enReproduccion){
+        Popularidad p = enReproduccion.getPopularidad();
+            int disLikes = enReproduccion.getDisLikes();
             if(p instanceof Auge & disLikes > 5000){
                 return true;
             }else{
